@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DIRECT_URL")
+}
+
+model Category {
+  id         Int       @id @default(autoincrement())
+  categoryid String    @default(cuid())
+  nama       String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  product    Product[]
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  productid   String   @default(cuid())
+  category_id Int
+  nama        String
+  image       String
+  price       Int
+  sale        Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  category    Category @relation(fields: [category_id], references: [id], onDelete: Cascade)
+}
