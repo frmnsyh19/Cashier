@@ -57,9 +57,8 @@ export const DawerCard = ({ product }: { product: Products }) => {
       <Drawer>
         <DrawerTrigger>
           <div
-            className={`card bg-white h-[17rem] rounded-2xl flex justify-center p-2 items-center w-[11rem] lg:w-[15rem] shadow-lg ${
-              isOrder ? "border border-orange-500" : ""
-            }`}>
+            className={`card bg-white h-[17rem] rounded-2xl flex justify-center p-2 items-center 
+  w-full shadow-lg ${isOrder ? "border border-orange-500" : ""}`}>
             <div className=" w-[94%] bg-gray-200 rounded-3xl flex justify-center items-center">
               <img
                 src={product?.image}
@@ -69,10 +68,10 @@ export const DawerCard = ({ product }: { product: Products }) => {
             </div>
             <div className=" w-full p-2 flex flex-col justify-between gap-1">
               <div className=" w-full flex flex-col">
-                <p className=" text-lg font-bold text-start text-wrap">
+                <p className=" text-lg font-bold capitalize text-start text-wrap">
                   {product?.nama}
                 </p>
-                <p className=" text-lg font-bold text-start text-orange-400">
+                <p className=" text-lg font-bold text-start  text-orange-400">
                   ${FormatDecimal(product?.price ?? 0)}
                 </p>
               </div>
@@ -93,7 +92,9 @@ export const DawerCard = ({ product }: { product: Products }) => {
               </div>
             </DrawerDescription>
             <div className=" w-full flex flex-col gap-1">
-              <p className=" text-lg text-center font-bold">{product?.nama}</p>
+              <p className=" text-lg text-center font-bold capitalize">
+                {product?.nama}
+              </p>
               <p className=" text-lg text-center text-orange-500 font-bold">
                 ${FormatDecimal(product?.price ?? 0)}
               </p>
@@ -103,10 +104,12 @@ export const DawerCard = ({ product }: { product: Products }) => {
             <Button
               onClick={() => handleAddToBag(product)}
               className=" bg-orange-500 hover:bg-orange-400">
-              Order Now
+              {isOrder ? "Tambah" : "Order Now"}
             </Button>
             <DrawerClose>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline" className=" w-full">
+                Cancel
+              </Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>

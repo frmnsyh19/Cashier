@@ -74,7 +74,7 @@ export const ProductCashier = () => {
                 <p className=" text-lg font-bold capitalize">{items.nama}</p>
                 <div className=" w-full border border-gray-200"></div>
               </div>
-              <div className=" w-full flex flex-row gap-2 lg:gap-3 justify-start items-center flex-wrap">
+              <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
                 {items.product && items.product.length > 0 ? (
                   items.product.map((prod, i) =>
                     isMobile ? (
@@ -84,7 +84,9 @@ export const ProductCashier = () => {
                     )
                   )
                 ) : (
-                  <p key={items.id}>Tidak ada produk</p>
+                  <p key={items.id} className="col-span-full text-center">
+                    Tidak ada produk
+                  </p>
                 )}
               </div>
             </div>

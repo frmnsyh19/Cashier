@@ -45,7 +45,7 @@ const CardComponent = ({ product }: { product: Products }) => {
 
   return (
     <div
-      className={`card bg-white rounded-2xl flex justify-center p-2 items-center w-[48%] lg:w-[15rem] shadow-lg ${
+      className={`card bg-white rounded-2xl flex justify-center p-2 items-center w-full shadow-lg ${
         isOrder ? "border border-orange-500" : ""
       }`}>
       <div className=" w-[94%] bg-gray-200 rounded-3xl flex justify-center items-center">

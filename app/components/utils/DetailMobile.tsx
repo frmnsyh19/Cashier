@@ -25,7 +25,7 @@ export const DetailMobile = () => {
     <Link
       href={"/order"}
       className="w-full fixed bottom-0 lg:hidden flex justify-center items-center p-3 z-50">
-      <div className="w-full flex justify-between p-3 bg-violet-900 rounded-4xl items-center">
+      <div className="w-full flex justify-between p-3 bg-rose-500 rounded-4xl items-center">
         <div className="flex flex-col gap-1">
           <p className="font-semibold text-xl text-white">{bag.length} items</p>
           <p className="text-wrap text-white text-sm">
